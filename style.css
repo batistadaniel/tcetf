@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%; /* importante para herdar altura */
+}
+
+.header {
+    width: 100%;
+    height: 60px;
+    background-color: blue;
+    position: sticky;
+    top: 0;
+    z-index: 1; /* header fica abaixo da sidebar */
+}
+
+.main {
+    display: flex;
+    height: calc(100vh - 60px); /* ocupa o resto da tela menos o header */
+}
+
+.sidebar-menu {
+    width: 15%;
+    height: 100vh; /* cobre a tela toda, inclusive sobrepondo o header */
+    background-color: aqua;
+    position: absolute; /* sai do fluxo normal */
+    top: 0;
+    left: 0;
+    z-index: 2; /* garante que fique por cima do header */
+}
+
+.main-menu {
+    display: flex;
+    flex: 1; /* ocupa todo o espaço restante em largura */
+    height: 100%; /* ocupa toda a altura definida no .main */
+    background-color: bisque;
+    margin-left: 15%; /* afasta pra não ficar embaixo da sidebar */
+    padding: 24px;
+    background-color: blueviolet;
+    justify-content: center;
+    /* align-items: ; */
+}   
+
+.main-menu .acoes {
+    display: flex;
+    gap: 30px;
+
+}
+
+.main-menu .acoes .btn {
+    /* text-align: end; */
+    width: 200px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    font-size: 20px;
+}
+
+.main-menu .acoes .btn img {
+    width: 75px;
+    height: 75px;
+}
